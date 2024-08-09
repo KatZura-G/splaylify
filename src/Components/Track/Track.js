@@ -7,7 +7,7 @@ const Track = (props) => {
     (event) => {
       props.onAdd(props.track);
     },
-    [props.onAdd, props.track]
+    [props]
   );
 
   const removeTrack = useCallback(
