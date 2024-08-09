@@ -1,5 +1,5 @@
 const clientId = "623f9c800cc44ec9908fec169e10bc4e";
-const redirectUri = "http://localhost:3000"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const redirectUri = "https://splaylify.netlify.app/"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
