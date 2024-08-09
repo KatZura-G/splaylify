@@ -1,38 +1,68 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+body,
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+  font-family: "Fira Code";
+}
+
+html {
+  font-size: 18px;
+}
+
+h1 {
+  padding: .77rem 0;
+  margin: 0;
+  background-color: aliceblue;
   text-align: center;
+  font-size: 1.88rem;
+  color: darkgrey;
+  position:fixed;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 .highlight {
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-size: 1.55rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  height: 100%;
+  padding: 5% 17% 10% 17%;
+  /* background-image: url('./background_photo_desktop.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  color: #fff;
+  z-index: 3;
+}
+
+.App-playlist {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 1020px) {
+  .App-playlist {
+    align-items: center;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .SearchBar {
+    margin-top: 2rem;
+  }
+  .App {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
   }
 }

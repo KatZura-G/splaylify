@@ -21,13 +21,13 @@ const Track = (props) => {
     if (props.isRemoval) {
       return (
         <button className="Track-action" onClick={removeTrack}>
-          -
+          {"<"}
         </button>
       );
     }
     return (
       <button className="Track-action" onClick={addTrack}>
-        +
+        {">"}
       </button>
     );
   };

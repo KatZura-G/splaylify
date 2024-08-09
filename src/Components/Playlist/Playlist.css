@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    box-shadow: 0 4px 2px 2px #000000;
+    width: 50%;
+    height: 40rem;
+    overflow-y: scroll;
+    margin: .5rem;
+    border-radius: 5px;
+}
+
+.Playlist input {
+    width: 90%;
+    border: 0;
+    margin-top: .5rem;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #030303;
+    font-family: "Fira Code";
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.Playlist-save {
+    cursor: pointer;
+    width: 10rem;
+    padding: .5rem 0;
+    border-radius: 5px;
+    border-width: 0px;
+    border: 0.5px solid black;
+    margin-top: 1rem;
+    background-color: rgb(225, 239, 251);
+    text-align: center;
+    font-size: .75rem;
+    transition: background-color .25s;
+    color: #000000;
+    font-weight: 500;
+  }
+
+
+.Playlist-save:hover {
+    background-color: rgb(251, 230, 230);
+  }
+  
+  ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+  }
+  
+  @media only screen and (max-width: 1020px) {
+    .Playlist {
+      width: 90%;
+    }
+  }
+  
