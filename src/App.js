@@ -44,7 +44,7 @@ const App = () => {
   }, [playlistName, playlistTracks]);
 
   return (
-    <div>
+    <div id="main-div">
       <h1>
         S<span className="highlight">playli</span>fy
       </h1>
