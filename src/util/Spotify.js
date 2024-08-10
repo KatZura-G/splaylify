@@ -1,5 +1,5 @@
 const clientId = "623f9c800cc44ec9908fec169e10bc4e";
-const redirectUri = "https://splaylify.netlify.app/"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const redirectUri = "http://splaylify.netlify.app/"; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
@@ -45,15 +45,18 @@ const Spotify = {
         }));
       });
   },
-
   savePlaylist(name, trackUris) {
     if (!name || !trackUris.length) {
       return;
     }
 
     const accessToken = Spotify.getAccessToken();
-    const headers = { Authorization: `Bearer ${accessToken}` };
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    };
     let userId;
+    let playlistId;
 
     return fetch("https://api.spotify.com/v1/me", { headers: headers })
       .then((response) => response.json())
@@ -66,13 +69,15 @@ const Spotify = {
         })
           .then((response) => response.json())
           .then((jsonResponse) => {
-            const playlistId = jsonResponse.id;
+            playlistId = jsonResponse.id;
             return fetch(
-              `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+              `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
               {
                 headers: headers,
                 method: "POST",
-                body: JSON.stringify({ uris: trackUris }),
+                body: JSON.stringify({
+                  uris: trackUris,
+                }),
               }
             );
           });
